@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://ca0q26b08swfo"]
+
+[ext_resource type="Texture2D" uid="uid://cksgn6on3no8m" path="res://Assets/Art/Mobile_Controls/Arrow-Pad.png" id="1_rxxqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6t1b"]
+atlas = ExtResource("1_rxxqy")
+region = Rect2(15, 0, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50jsl"]
+atlas = ExtResource("1_rxxqy")
+region = Rect2(65, 0, 18, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxxqy"]
+size = Vector2(48, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mfjs"]
+atlas = ExtResource("1_rxxqy")
+region = Rect2(15, 31, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smw4a"]
+atlas = ExtResource("1_rxxqy")
+region = Rect2(65, 31, 18, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6t1b"]
+size = Vector2(48, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtrau"]
+atlas = ExtResource("1_rxxqy")
+region = Rect2(0, 15, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hshy4"]
+atlas = ExtResource("1_rxxqy")
+region = Rect2(50, 15, 17, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50jsl"]
+size = Vector2(15, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejk5x"]
+atlas = ExtResource("1_rxxqy")
+region = Rect2(31, 15, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on5ul"]
+atlas = ExtResource("1_rxxqy")
+region = Rect2(81, 15, 17, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_infky"]
+size = Vector2(15, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62v7d"]
+atlas = ExtResource("1_rxxqy")
+region = Rect2(16, 16, 16, 16)
+
+[node name="MobileControls" type="CanvasLayer" unique_id=2010821545]
+
+[node name="Up" type="TouchScreenButton" parent="." unique_id=680343497]
+texture_filter = 1
+position = Vector2(141, 246)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_r6t1b")
+texture_pressed = SubResource("AtlasTexture_50jsl")
+shape = SubResource("RectangleShape2D_rxxqy")
+passby_press = true
+action = "move_up"
+
+[node name="Down" type="TouchScreenButton" parent="." unique_id=1979896123]
+texture_filter = 1
+position = Vector2(141, 370)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_1mfjs")
+texture_pressed = SubResource("AtlasTexture_smw4a")
+shape = SubResource("RectangleShape2D_r6t1b")
+passby_press = true
+action = "move_down"
+
+[node name="Left" type="TouchScreenButton" parent="." unique_id=38496020]
+texture_filter = 1
+position = Vector2(81, 306)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_wtrau")
+texture_pressed = SubResource("AtlasTexture_hshy4")
+shape = SubResource("RectangleShape2D_50jsl")
+passby_press = true
+action = "move_left"
+
+[node name="Right" type="TouchScreenButton" parent="." unique_id=1395142179]
+texture_filter = 1
+position = Vector2(205, 306)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_ejk5x")
+texture_pressed = SubResource("AtlasTexture_on5ul")
+shape = SubResource("RectangleShape2D_infky")
+passby_press = true
+action = "move_right"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1792635588]
+z_index = -1
+texture_filter = 1
+position = Vector2(177, 342)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_62v7d")

@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://b4ru222i0jitc"]
+
+[ext_resource type="Script" uid="uid://jp0ou4ab2tr6" path="res://Mob/mob.gd" id="1_ekqyt"]
+[ext_resource type="Texture2D" uid="uid://bw1e4jd3egbcb" path="res://Assets/Art/Beetle_000 Spritesheet.png" id="2_2topa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opcrb"]
+atlas = ExtResource("2_2topa")
+region = Rect2(0, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uww5"]
+atlas = ExtResource("2_2topa")
+region = Rect2(8, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imoth"]
+atlas = ExtResource("2_2topa")
+region = Rect2(16, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tbkf"]
+atlas = ExtResource("2_2topa")
+region = Rect2(24, 16, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_frqwd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opcrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uww5")
+}],
+"loop": true,
+"name": &"beetle_1",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imoth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tbkf")
+}],
+"loop": true,
+"name": &"beetle_2",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e45k"]
+size = Vector2(54, 29)
+
+[node name="Mob" type="RigidBody2D" unique_id=478865529 groups=["mobs"]]
+z_index = 1
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_ekqyt")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1478428109]
+texture_filter = 1
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_frqwd")
+animation = &"beetle_2"
+frame_progress = 0.07948059
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=183389480]
+position = Vector2(0, 18.5)
+shape = SubResource("RectangleShape2D_0e45k")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=785463768]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
